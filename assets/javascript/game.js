@@ -10,44 +10,58 @@ var buttonThree;
 var buttonFour;
 
 var questions;
-var anwser;
-var correctAnwsers;
+var answer;
+var correctAnswers;
 var images;
 var correctGuess = 0;
 var incorrectGuess = 0;
-var noAnwser = 0;
+var noAnswer = 0;
 var timer;
 
 // Start
 
 var count = 30;
 
+ questionArray = [ "What was The Hulk's original color?", "What is Dare Devil's real name?", "Which is not a interation of the Robin character?", "The character Deadpool has a fear or what...?", "What year did the Wonder Women comic debut?"];
+
+
+//Answers
+answerArray = [[ "Green", "Grey", "Blue", "Red"], ["Matt Murdock", "Foggy Nelson", "Scott Summers", "Frank Castle"], ["Tim Drake", "Damien Wayne", "Stephanie Brown","Barbara Gordon"], ["Spiders", "Spider-man", "Cows", "Zombies"], ["1927", "1939", "1941", "1955"]];
+
+
+correctArray = [1, 0, 3, 2, 0];
+
+
 $(".start").on("click", function() {
 	$(".start").hide("slow");
+
+	questionsCounter = 0
 	showText ();
 	var start = true;
-	setInterval(clock,1000)
+	
+setInterval(clock,1000)
 
-;
 });
 
 function showText () { 
 	$(".hourglass").html(count);
-	questionsCounter = 0
-	correctAnwsers = correctArray[questionsCounter];
+	if (questionsCounter < correctArray.length)
+	{
+	correctAnswers = correctArray[questionsCounter];
 	$(".questions").html(questionArray[questionsCounter]); 
 	button();
-
+}
 }
 
 
 // Timers
  function clock () {
- 	if (count === 0) {
+ 			if (count === 0) {
  		clearInterval(clock);}
  		if (count > 0) {
  		count -- ;	
- 	}
+ 		}
+
  
  	console.log("clock")
  	showText();
@@ -56,69 +70,72 @@ function showText () {
 
 //Questions
 
- questionArray = [ "What was The Hulk's original color?", "What is Dare Devil's real name?", "Which is not a interation of the Robin character?", "The character Deadpool has a fear or what...?", "What year did the Wonder Women comic debut?"];
-
-
-//Anwsers
-anwserArray = [[ "Green", "Grey", "Blue", "Red"], ["Matt Murdock", "Foggy Nelson", "Scott Summers", "Frank Castle"], ["Tim Drake", "Damien Wayne", "Stephanie Brown","Barbara Gordon"], ["Spiders", "Spider-man", "Cows", "Zombies"], ["1927", "1939", "1941", "1955"]];
 
 
 
 
 function button () {
-$("#button1").html(anwserArray[questionsCounter][0]);
-$("#button2").html(anwserArray[questionsCounter][1]);
-$("#button3").html(anwserArray[questionsCounter][2]);
-$("#button4").html(anwserArray[questionsCounter][3]);
+$("#button1").html(answerArray[questionsCounter][0]);
+$("#button2").html(answerArray[questionsCounter][1]);
+$("#button3").html(answerArray[questionsCounter][2]);
+$("#button4").html(answerArray[questionsCounter][3]);
 }
 
 //Right answer  [1, 0, 3, 2, 0]; , #button2, #button3, #button4
 
 
-$(function correct(){
-    $("#button1, #button2, #button3, #button4").on('click', function(event){
+$(function correct1(){
+    $("#button1").on('click', function(event){
+    	answer = 0;
     	console.log(correctArray[questionsCounter]);
-    	console.log(buttonOne);
+    	console.log(answer);
+    	userGuess();
+    });
+});
+$(function correct2(){
+    $("#button2").on('click', function(event){
+    	answer = 1;
+    	console.log(correctArray[questionsCounter]);
+    	console.log(answer);
+    	userGuess();
+    });
+});
+$(function correct3(){
+    $("#button3").on('click', function(event){
+    	answer = 2;
+    	console.log(correctArray[questionsCounter]);
+    	console.log(answer);
+    	userGuess();
+    });
+});
+$(function correct4(){
+    $("#button4").on('click', function(event){
+    	answer = 3;
+    	console.log(correctArray[questionsCounter]);
+    	console.log(answer);
+    	userGuess();
     });
 });
 
 
- 
-correctArray = ["Grey", "Matt Murdock", "Barbara Gordon", "Cows", "1941"];
 
-buttonOne = anwserArray[questionsCounter][0]; 
 function userGuess () {
-	if (buttonOne === correctArray[questionsCounter]) {
-		console.log("BINGO");
+
+	if (answer === correctArray[questionsCounter]) {
+		correctGuess++;
+		$(".solution").show();
+		$(".solution").html("Correct! The right answer was " + answerArray[questionsCounter][correctArray[questionsCounter]]);
 	} else { console.log("False");
+		incorrectGuess++;
+		$(".solution").show();
+		$(".solution").html("Wrong! The right answer was " + answerArray[questionsCounter][correctArray[questionsCounter]]);
 }
+		setTimeout (function () {questionsCounter+=1}, 1000 * 5);
+		setTimeout (function () {$(".solution").hide();}, 1000 * 5);
+		setTimeout (function () {count = 30;}, 1000 * 5);
+		showText();
+		console.log(questionsCounter);
 }
-
-
-/* $("#button1, #button2, #button3, #button4").on("click", function() {
-	if(correctAnwsers === userGuess) {
-		console.log (correctAnwsers);
-		//userGuess = $(".solution").html();
-		clearInterval(clock);
-	}
-	else {
-		clearInterval(clock);
-	}
-});
-*/
-
-
-/*function getMatch(anwserArray, correctArray) {
-    var matches = [];
-    for ( var i = 0; i < anwserArray[questionsCounter].length; i++ ) {
-        for ( var e = 0; e < correctArray[questionsCounter].length; e++ ) {
-            if ( anwserArray[i] === correctArray[e] ) matches.push( a[i] );
-        }
-    }
-    return matches;
-    console.log(matches);
-}
-getMatch(anwserArray[questionsCounter], correctArray[questionsCounter]); */
 
 
 //Images
@@ -127,7 +144,7 @@ getMatch(anwserArray[questionsCounter], correctArray[questionsCounter]); */
 
 
 
-//Wrong anwser
+//Wrong answer
 
 // Win & Lose Count
 
