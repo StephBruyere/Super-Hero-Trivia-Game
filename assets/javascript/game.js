@@ -71,9 +71,6 @@ function showText () {
 //Questions
 
 
-
-
-
 function button () {
 $("#button1").html(answerArray[questionsCounter][0]);
 $("#button2").html(answerArray[questionsCounter][1]);
@@ -142,14 +139,10 @@ function userGuess () {
 
 
 
-
-
-//Wrong answer
-
 // Win & Lose Count
 
 
-//Global variables
+
 
 
 
