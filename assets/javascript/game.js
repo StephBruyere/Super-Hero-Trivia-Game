@@ -20,6 +20,7 @@ var timer;
 // Start
 
  $("#button5").hide();
+ $("#button1, #button2, #button3, #button4").hide();
 
 var count = 10;
 
@@ -173,6 +174,7 @@ function userGuess () {
 	$(".hourglass").show();
 	showText();
  	$("#button1, #button2, #button3, #button4").show();
+ 	count = 10;
  	timer = setInterval( function(){clock()},1000);
  	clock ();
  	$("#button5").hide();
