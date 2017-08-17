@@ -17,10 +17,11 @@ var correctGuess = 0;
 var incorrectGuess = 0;
 var noAnswer = 0;
 var timer;
-
 // Start
 
-var count = 30;
+ $("#button5").hide();
+
+var count = 10;
 
  questionArray = [ "What was The Hulk's original color?", "What is Dare Devil's real name?", "Which is not a interation of the Robin character?", "The character Deadpool has a fear or what...?", "What year did the Wonder Women comic debut?"];
 
@@ -38,8 +39,9 @@ $(".start").on("click", function() {
 	questionsCounter = 0
 	showText ();
 	var start = true;
+	timer = setInterval( function(){clock()},1000);
+	$("#button1, #button2, #button3, #button4").show();
 	
-setInterval(clock,1000)
 
 });
 
@@ -52,21 +54,6 @@ function showText () {
 	button();
 }
 }
-
-
-// Timers
- function clock () {
- 			if (count === 0) {
- 		clearInterval(clock);}
- 		if (count > 0) {
- 		count -- ;	
- 		}
-
- 
- 	console.log("clock")
- 	showText();
- }
-
 
 //Questions
 
@@ -115,31 +102,85 @@ $(function correct4(){
 });
 
 
-
 function userGuess () {
-
+	$("#button1, #button2, #button3, #button4").hide();
+	$(".hourglass").hide();
 	if (answer === correctArray[questionsCounter]) {
 		correctGuess++;
 		$(".solution").show();
 		$(".solution").html("Correct! The right answer was " + answerArray[questionsCounter][correctArray[questionsCounter]]);
-	} else { console.log("False");
+	} 
+	else { console.log("False");
 		incorrectGuess++;
 		$(".solution").show();
 		$(".solution").html("Wrong! The right answer was " + answerArray[questionsCounter][correctArray[questionsCounter]]);
+	}
+	if (questionsCounter === correctArray.length-1){
+		gameOver();
+	
 }
-		setTimeout (function () {questionsCounter+=1}, 1000 * 5);
-		setTimeout (function () {$(".solution").hide();}, 1000 * 5);
-		setTimeout (function () {count = 30;}, 1000 * 5);
+		setTimeout (function () {questionsCounter+=1}, 1000 * 3);
+		if (questionsCounter < questionArray.length-1){
+		setTimeout (function () {$("#button1, #button2, #button3, #button4").show();}, 1000 * 3);
+		setTimeout (function ()  {$(".solution").hide();}, 1000 * 2);
+		setTimeout (function () {$(".hourglass").show();}, 1000 * 3);}
+		setTimeout (function () {count = 10;}, 1000 * 2);
 		showText();
 		console.log(questionsCounter);
 }
 
+// Timers
+ function clock () {
+ 		if (count === 0 ) {	
+ 		answer != correctArray[questionsCounter];
+		userGuess();
+		(count = 10);		
+} 
+ 		if (count > 0) {
+ 		count -- ;
+ 		}
+ 	console.log("clock")
+ 	showText ();
+ } 
 
-//Images
+ while (correctArray === correctArray.length) {
+ 	$(".hourglass").html(count);
+ 	console.log("stop hourglass")
+ 	clearInterval(timer);
+ } 
+
+ function gameOver() {
+ 		clearInterval(timer);
+ 		$("#button1, #button2, #button3, #button4").hide();
+ 		$(".hourglass").hide();
+ 		$(".stats").html("Correct Anwsers: " + correctGuess + " <br> Wrong Anwsers: " + incorrectGuess);
+ 		$("#button5").show();
+ 		console.log("game over");
+ 		console.log(correctGuess +"correct");
+ 		console.log(incorrectGuess + "wrong");
+ 		if (correctGuess >= 5) {$(".win").html("You're a true hero!");}
+ 		 if (correctGuess >= 3){$(".win").html("You're a hero in training!");} 
+ 		 else { $(".win").html("Stand Aside, Citizen!");}
+ }
+
+
+	$("#button5").on('click', function(event){
+	questionsCounter = 0;
+	correctAnswers = 0;
+	incorrectGuess = 0;
+	$(".stats, .win").hide();
+	$(".solution").hide();
+	$(".hourglass").show();
+	showText();
+ 	$("#button1, #button2, #button3, #button4").show();
+ 	timer = setInterval( function(){clock()},1000);
+ 	clock ();
+ 	$("#button5").hide();
+});
+ 
 
 
 
-// Win & Lose Count
 
 
 

@@ -10,77 +10,80 @@
     <!-- Bootstrap stylesheet-->
     <!-- 3.3.7 compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!--Google fonts -->
+<link href="https://fonts.googleapis.com/css?family=Boogaloo|Luckiest+Guy" rel="stylesheet">
     <!--Native Stylesheet -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <!--Google fonts -->
+
     <title>Trivia Game</title>
 </head>
 
 <body>
-    <div class="container">
-        <div class= "row">
-        <div class= "col-2">&nbsp;</div>
-        <div class= "col-8" title> The "Worlds Greatest" Trivia Game" 
-        <button type="button" class="start">Start</button>  </div>
-        <div class= "col-2">&nbsp;</div>
-        </div>
 
-        <div class="container">
-        <div class= "row">
-        <div class= "col-2"></div>
-        <div class= "col-8 hourglass"> </div> 
-        <div class= "col-2"></div>
-        </div>
-        </di
 
-        <div class="container">
-        <div class= "row">
-        <div class= "col-2"></div>
-        <div class= "col-8 questions"> </div> 
-        <div class= "col-2"></div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="title"> The "Worlds Greatest" Trivia Game </div>
+        <div class="btnStyle">
+            <button type="button" class="start">Start</button>
         </div>
-        </div>
+        <div class="questions"></div>
+    </div>
+</div>
 
-         <div class="container">
-        <div class= "row">
-        <div class= "col-2"></div>
-        <div class= "col-8 anwsers"> </div> 
-        <button id="button1"> </button>
-        <button id="button2"> </button>
-        <button id="button3"> </button>
-        <button id="button4"> </button>
+<div class="container-fluid">
+    <div class="row wrap">
+        <div class="col-12 anwsers"> </div>
+            <div class="solution"></div> 
+    </div>
+</div>    
 
-        <div class= "col-2"></div>
+<div class="container">
+    <div class="row btnStyle3">
+        <div class="btnStyle2">
+            <button id="button1" class="btnStyle2"> </button>
         </div>
+        <div class="btnStyle2">
+            <button id="button2" class="btnStyle2"> </button>
         </div>
+        <div class="btnStyle2">
+            <button id="button3" class="btnStyle2"> </button>
+        </div>
+        <div class="btnStyle2">
+            <button id="button4" class="btnStyle2"> </button>
+        </div>
+    </div>
+</div>
 
-        <div class="container">
-        <div class= "row">
-        <div class= "col-2"></div>
-        <div class= "col-8 solution"> </div> 
-        <div class= "col-2"></div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-8 win"> </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="stats"> </div>
+        <div class="btnStyle4">
+            <button id="button5" class="restart"> reset </button>
         </div>
-        </div>
-
-        <div class="container">
-        <div class= "row">
-        <div class= "col-2"></div>
-        <div class= "col-8 image"> </div> 
-        <div class= "col-2"></div>
-        </div>
-        </div>
-
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 hourglass"> </div>
+</div>
+</div>
+<div class="display"> <img src="assets/css/images/pow4.jpg" style="width: 100%"; height:auto;> </div>
 
 </body>
+
 <footer>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js "></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js " integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa " crossorigin="anonymous "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js " integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb " crossorigin="anonymous "></script>
     <!--Javascript Stylesheet -->
     <script type=" text/javascript " src="assets/javascript/game.js "></script>
-
 
 </footer>
 

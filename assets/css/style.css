@@ -1,0 +1,226 @@
+body {
+min-width: 960px;
+}
+
+
+.title {
+	text-align:center;
+	font-size: 3em;
+	width: 100%;
+	display:block;
+	position: relative;
+	margin-top: 5%;
+	font-family: 'Luckiest Guy', cursive;
+}
+
+.start {
+	text-align: center;
+	width:25%;
+	height: 45px;
+	position: relative;
+	margin-top: 5%;
+	background-color: red;
+	border-radius: 5px;
+	color:white;
+	font-size: 1.5em;
+	border-color: transparent;
+	font-family: 'Luckiest Guy', cursive;
+
+}
+
+.restart {
+	text-align: center;
+	width:25%;
+	height: 45px;
+	position: relative;
+	margin-top: 5%;
+	background-color: red;
+	border-radius: 5px;
+	color:white;
+	font-size: 1.5em;
+	border-color: transparent;
+	font-family: 'Luckiest Guy', cursive;
+	bottom:35%;
+
+}
+
+
+.btnStyle {
+	text-align: center;
+	width:100%;
+	position: absolute;
+}
+
+
+.btnStyle2 {
+	position: relative;
+	text-align: center;
+	width: 100%;
+	height: auto;
+	margin-top: 0, auto;
+	bottom: 10%; 
+}	
+
+.btnStyle3 {
+	text-align: center;
+	width:100%;
+	position: absolute;
+	top:35%;
+}
+
+.btnStyle4 {
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	height: auto;
+	margin-top: 0, auto;
+	bottom: 35%; 
+}
+
+#button1 {
+	text-align: center;
+	width:15%;
+	height: inherit;
+	position: relative;
+	float:left;
+	display: inline-block;
+	margin-top: 5%;
+	margin-bottom: 5%;
+	margin-left: 3%;
+	margin-right:5%;
+	background-color: orange;
+	border-radius: 5px;
+	color:white;
+	font-size: 1.5em;
+	border-color: transparent;
+	font-family: 'Boogaloo', cursive;
+}
+
+
+#button2 {
+	text-align: center;
+	width:15%;
+	height: inherit;
+	position: relative;
+	float:left;
+	display: inline-block;
+	margin-top: 5%;
+	margin-bottom: 5%;
+	margin-right:5%;
+	background-color: orange;
+	border-radius: 5px;
+	color:white;
+	font-size: 1.5em;
+	border-color: transparent;
+	font-family: 'Boogaloo', cursive;
+}
+
+
+#button3 {
+	text-align: center;
+	width:15%;
+	height: inherit;
+	position: relative;
+	float:left;
+	display: inline-block;
+	margin-top: 5%;
+	margin-bottom: 5%;
+	margin-right:5%;
+	background-color: orange;
+	border-radius: 5px;
+	color:white;
+	font-size: 1.5em;
+	border-color: transparent;
+	font-family: 'Boogaloo', cursive;
+}
+
+
+#button4 {
+	text-align: center;
+	width:15%;
+	height: inherit;
+	position: relative;
+	float:left;
+	display: inline-block;
+	margin-top: 5%;
+	margin-bottom: 5%;
+	background-color: orange;
+	border-radius: 5px;
+	color:white;
+	font-size: 1.5em;
+	border-color: transparent;
+	font-family: 'Boogaloo', cursive;
+}
+
+
+.display {
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	height: auto;
+	margin-top: 0%, auto;
+	bottom: 0; 
+	z-index: -1;
+	min-width: 1280px;
+	overflow:;
+}
+
+.questions {
+	text-align:center;
+	font-size: 3em;
+	width: 100%;
+	display:block;
+	position: absolute;
+	margin-top: 0%;
+	font-family: 'Boogaloo', cursive;
+}
+
+.hourglass {
+	text-align:center;
+	font-size: 6em;
+	width: 100%;
+	display:block;
+	position: absolute;
+	margin-top: 20%;
+	font-family: 'Luckiest Guy', cursive;
+	color:red;
+}
+
+.solution {
+	text-align:center;
+	font-size: 3em;
+	margin-top: 80px;
+	width: 100%;
+	display:block;
+	position:fixed;
+	margin-top: 5%;
+	font-family: 'Boogaloo', cursive;
+	color:orange;
+}
+
+.win {
+	text-align:center;
+	position: absolute;
+	font-size: 3em;
+	margin-top: 0px;
+	width: 100%;
+	display:block;
+	position:fixed;
+	margin-top: 5%;
+	font-family: 'Boogaloo', cursive;
+	color:black;
+	bottom:55%;
+}
+
+.stats {
+	text-align:center;
+	font-size: 2em;
+	margin-top: 80px;
+	width: 100%;
+	display:block;
+	position:fixed;
+	margin-top: 5%;
+	font-family: 'Boogaloo', cursive;
+	color:black;
+	bottom:45%;
+}
